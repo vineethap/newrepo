@@ -1,0 +1,29 @@
+.list
+{
+	list-style-type:none;
+}
+#todo-add{
+	
+	font-size: 18 px;
+}
+.li-2
+{
+	display: inline;
+	padding-left: 5px;
+}
+.cb
+{
+
+}
+.task
+{
+
+}
+/*if(cb1.checked ) {
+		        $("#task1").css('color','red');
+		       // $("#task1").html("<s>"+$("#task1").text()+"</s>");
+			    }else if(cb2.checked){
+			    	$("#task2").css('color','red');
+			    }else{
+			    	$(".task").css('color','black');
+			    }*/
