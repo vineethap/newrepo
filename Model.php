@@ -33,7 +33,7 @@ public function save(){
 $result=$con->query($insrt);
 	 } else{
 	 	$clm="";
-     //$cl_vl="";
+     
 	     foreach ($this as $key => $value) {
 	     	$clm.=$key.'="'.$value.'",';
 	     	
@@ -66,6 +66,31 @@ public function find($i){
     	 	 } 
          }
     }
+   public function load(){
+   		$cn=$this->connectn();
+   		$tblnme=get_class($this);
+   		$selct='select * from '.$tblnme.' ';
+   		//echo $selct;
+   		$reslt=$cn->query($selct);
+   		return $reslt;
+        // while($row= $reslt->fetch_assoc()){
+        //  foreach ($row as $key => $value) {
+         		
+        //  	}	
+        // }
+
+
+   } 
+   public function delete($i){
+   	$cn=$this->connectn();
+   		$tblnme=get_class($this);
+   		$del='delete from '.$tblnme.' where id='.$i;
+   		echo $del;
+   		$resl=$cn->query($del);
+   		return $resl;
+
+   }
+
  }
 
 ?>

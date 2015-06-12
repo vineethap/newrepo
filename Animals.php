@@ -4,6 +4,7 @@ Class Animals extends Model {
 	public $name;
 	public $age;
 	public $num_legs;
+	public $id;
 	
 	public function setName($nme){
 		$this->name=$nme;
@@ -23,10 +24,18 @@ Class Animals extends Model {
     public function getNum_legs(){
 		return $this->num_legs;
 	}
+	public function setId($i){
+		$this->id=$i;
+	}
+	public function getId(){
+		 return $this->id;
+}
 }
 $anml=new Animals;
 if (isset($_POST['sve'])){
-
+//	$anml=new Animals;
+$anml->setId($_POST['fnd']);
+echo $anml->getId();
 
 $anml->setName($_POST['name']);
 echo $anml->getName();
@@ -47,6 +56,11 @@ if(isset($_POST['find'])){
 	$i=$_POST['fnd'];
 	
 		$anml->find($i);
+
+}
+if (isset($_POST['ID'])){
+$my_id=$_POST['ID'];
+$anml->delete($my_id);
 
 }
 ?>

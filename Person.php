@@ -33,6 +33,7 @@ Class Person extends Model {
 	}
 }
 
+$psn=new Person;
 if (isset($_POST['sve'])){
 $psn=new Person;
 $psn->setId($_POST['fnd']);
@@ -59,6 +60,11 @@ if(isset($_POST['find'])){
 		$psn->find($i);
 
 }
+if (isset($_POST['ID'])){
+$my_id=$_POST['ID'];
+$psn->delete($my_id);
 
-//$psn->find(1);
+}
+
+
 ?>
